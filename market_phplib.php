@@ -42,7 +42,7 @@ function logincheck_markethelper($dontecho=0,$dontloging=0){
 	session_start();
 
 	if(!isset($_SESSION['markethelper_user_id'])){
-		errorlogout('로그인 되어 있지 않습니다.');
+		errorlogout('로그인 되어 있지 않습니다.',"lindows.kr/MarketHelper/loginpage.php");
 	
 	}
 
@@ -54,7 +54,7 @@ function logincheck_markethelper($dontecho=0,$dontloging=0){
 	$userdata=$result->fetch_array();
 
 	if($result->num_rows==0){
-	errorlogout('로그인 되어 있지 않습니다.');
+	errorlogout('로그인 되어 있지 않습니다.',"lindows.kr/MarketHelper/loginpage.php");
 	
 	}
 	else if($userdata['latest_ip']!=$_SERVER['REMOTE_ADDR']){
@@ -114,7 +114,7 @@ function admincheck(){
 	session_start();
 
 	if(!isset($_SESSION['markethelper_user_id'])){
-		errorhome('로그인 되어 있지 않습니다.');
+		errorlogout('로그인 되어 있지 않습니다.',"lindows.kr/MarketHelper/loginpage.php");
 		return false;
 	}
 	else if($_SESSION['markethelper_user_ip']!=$_SERVER['REMOTE_ADDR']){

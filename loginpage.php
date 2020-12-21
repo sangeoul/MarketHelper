@@ -14,7 +14,6 @@ dbset();
 if($dbcon->connect_error){
 	die("Connection Failed<br>".$dbcon->connect_error);
 }
-
 //else echo "Connected MariaDB Successfully.<br><br>";
 
 echo ("<div class=login>");
